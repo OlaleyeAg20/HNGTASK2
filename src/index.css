@@ -141,8 +141,14 @@ nav{
   margin: 2rem auto;
 }
 
+.productsContainer::after {
+  content: "";
+  flex: auto;
+}
+
 .productCard{
-  flex: 1 1 260px;
+  flex: 1 1 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;

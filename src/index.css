@@ -34,6 +34,10 @@ button{
   word-break: break-all;
 }
 
+*:focus-visible{
+  outline: 1px dashed;
+}
+
 body{
   background: #FFF;
 }
@@ -135,16 +139,12 @@ nav{
 .productsContainer{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 2rem auto;
 }
 
-.productsContainer::after {
-  content: "";
-  flex: auto;
-}
 
 .productCard{
   flex: 1 1 300px;
@@ -155,6 +155,17 @@ nav{
   height: 384px;
   gap: .5rem;
   cursor: pointer;
+  text-decoration: none;
+
+  &:hover, &{
+    color: var(--black-text);
+    text-decoration: none;
+  }
+
+  &:focus img{
+    transform: scale(1.2);
+    transition: transform 1s ease;
+  }
 
 p{
   font-size: var(--font-size);

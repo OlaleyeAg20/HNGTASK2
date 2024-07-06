@@ -20,7 +20,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/product/:productId',
-    element: <ProductPage />
+    element: <ProductPage />,
+    errorElement: <NotFound />,
   }
 ])
 

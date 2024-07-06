@@ -354,6 +354,7 @@ li{
 
   #root > *{
     padding-inline: 1rem;
+    font-size: 0.875rem;
   }
 
   .productCard{
@@ -401,5 +402,16 @@ li{
   }
   #menuBtn{
     display: initial;
+  }
+  footer{
+    font-size: 0.875rem;
+  }
+  .form{
+    inputL:placeholder{
+      font-size: 0.875rem;
+    }
+  }
+  .searchBar input:placeholder{
+    font-size: 0.875rem;
   }
 }

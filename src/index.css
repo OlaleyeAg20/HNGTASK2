@@ -336,6 +336,18 @@ li{
   gap: 2rem;
 }
 
+@media screen and (max-width: 900px){
+  nav .navLinks{
+    font-size: 14px;
+  }
+  nav{
+    gap: .5rem;
+  }
+  .productCard{
+    flex: 1 200px;
+  }
+}
+
 @media screen and (max-width: 600px){
 
   #root > *{

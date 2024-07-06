@@ -178,7 +178,6 @@ p{
   display: block;
   line-height: 24px;
   letter-spacing: var(--letter-spacing-negative);
-  padding: .25rem;
 }
 
 .card-image{

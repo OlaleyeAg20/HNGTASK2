@@ -2,7 +2,7 @@
     {
         "productName": "Atlas Extra Large Slipcover Modular Reversible Floor Sectional Sofa",
         "productPrice": 998,
-        "productImage": "couch.png",
+        "productImage": "./couch.png",
         "id": 1
     },
     {

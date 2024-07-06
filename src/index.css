@@ -10,6 +10,7 @@
   --grey-100: #F5F5F5;
   --grey-200: #E5E5E5;
   --grey-300: #BDBDBD;
+  --form-bg: #fffcf0;
   --font-size: 16px;
   --font-size-small: 14px;
   --letter-spacing-negative: -0.15px;
@@ -226,15 +227,16 @@ p{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  padding: 3rem 0;
   flex-wrap: wrap;
   gap: 2rem;
+  background: var(--form-bg);
 }
 
 .formHeader{
   h1{
     font-size: 20px;
-    font-family: 'GeneralSans-Medium';
+    font-family: 'GeneralSans-Regular';
     line-height: 26px;
     margin-bottom: 12px;
   }

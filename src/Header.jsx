@@ -9,8 +9,8 @@ export default function Header(){
                 <span className="searchIcon"><SearchIcon /></span>
                 <input type="search" placeholder="Search for products, brands or a reference number" />
             </div>
-            <button className="iconBtns flex-justify-align-center"><Tote /></button>
-            <button className="iconBtns flex-justify-align-center"><User />Account</button>
+            <button className="tote iconBtns flex-justify-align-center"><Tote /></button>
+            <button className="iconBtns flex-justify-align-center"><User /><span>Account</span></button>
         </header>
         </>
     )

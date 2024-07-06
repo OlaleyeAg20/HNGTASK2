@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function NavBar(){
     return(
         <>
-            <nav className="flex-justify-align-center">
+            <nav className="nav flex-justify-align-center">
                 <Link className="navLinks" to="/">Furniture</Link>
                 <Link className="navLinks currentpage" to="/">Shop</Link>
                 <Link className="navLinks" to="/">Blog</Link>

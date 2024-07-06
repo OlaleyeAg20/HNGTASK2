@@ -2,7 +2,9 @@
   --red-color: #E8394B;
   --logo-red: #D92C2A;
   --body-bg: #FFF;
+  --text-white: #FFF;
   --link-green: #338180;
+  --btn-green: #006160;
   --black-text: #181818;
   --grey-50: #F9F9F9;
   --grey-100: #F5F5F5;
@@ -32,6 +34,7 @@ button{
   font-family: 'GeneralSans-Regular';
   text-overflow: ellipsis;
   word-break: break-all;
+  letter-spacing: var(--letter-spacing-negative);
 }
 
 *:focus-visible{
@@ -205,8 +208,158 @@ p{
 }
 }
 
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.formHeader{
+  h1{
+    font-size: 20px;
+    font-family: 'GeneralSans-Medium';
+    line-height: 26px;
+    margin-bottom: 12px;
+  }
+  .subtext{
+    line-height: 21px;
+    font-size: 14px;
+    font-family: 'GeneralSans-Regular';
+  }
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+
+
+input{
+    padding: 16px 24px;
+    border: 1px solid #ADAEAF;
+    min-width: 300px;
+    border-radius: 300px;
+  }
+input:placeholder{
+  color: #747474;
+  letter-spacing: var(--letter-spacing-negative);
+  font-family: 'GeneralSans-Regular';
+  line-height: 24px;
+}
+}
+
+.button{
+  background: var(--btn-green);
+  color: var(--body-bg);
+  padding: 16px 24px;
+  border-radius: 600px;
+  border: none;
+  line-height: 24px;
+  font-family: 'GeneralSans-Regular';
+}
+
 .priceTag{
   font-family: 'GeneralSans-Semibold';
   line-height: 24px;
   letter-spacing: var(--letter-spacing-negative);
+}
+
+footer{
+  background: var(--btn-green);
+  color: var(--text-white);
+  padding-block: 2rem;
+
+ul{
+  list-style: none;
+
+h1{
+  margin-bottom: 2rem;
+}
+li{
+  margin-block: 1rem;
+}
+}
+}
+
+.footerLinks{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+h1{
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'GeneralSans-Semibold';
+}
+
+li{
+  font-size: 14px;
+  line-height: 21px;
+  font-family: 'GeneralSans-Regular';
+}
+}
+
+.bottomFooter{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socials{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 600px){
+
+  #root > *{
+    padding-inline: 1rem;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .tote{
+    margin-left: auto;
+  }
+
+  .iconBtns span{
+    display: none;
+  }
+
+  .searchBar{
+    /* display: none; */
+    position: absolute;
+    bottom: -48px;
+    width: 90%;
+    left: 0;
+    right: 0;
+  }
+
+  header{
+    position: relative;
+    margin-bottom: 64px;
+  }
+
+  .form{
+    margin-inline: auto;
+  }
+
+  .form button, .form input{
+    width: 100%;
+  }
+
+  .bottomFooter{
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 }

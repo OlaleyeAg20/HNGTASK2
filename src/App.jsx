@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard"
 import products from "./products.json"
 import Form from "./Form"
 import Footer from "./Footer"
+import ScrollToTop from "./ScrollToTop"
 
 
 const productsOutput = products.map(e => {
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <div className="announcementBar">Free Shipping on All Orders</div>
+      <ScrollToTop />
       <Header />
       <NavBar className="nav" />
       <div className="productsContainer">

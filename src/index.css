@@ -20,7 +20,7 @@ img {
   object-fit: cover;
 }
 
-button {
+button, label {
   cursor: pointer;
 }
 
@@ -48,7 +48,7 @@ button:active {
 }
 
 *:focus-visible {
-  outline: 1px dashed;
+  outline: 1px solid;
 }
 
 body {
@@ -168,7 +168,12 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin: 2rem auto;
+  margin-block: 2.5rem;
+}
+
+.rating{
+  display: flex;
+  align-items: center;
 }
 
 .productCard {
@@ -456,14 +461,20 @@ ul{
 }
 }
 
+.shopSimilar{
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+}
+
 .similarItems{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 
 & > *{
-  flex: 1 150px;
+  flex: 1 200px;
 }
 }
 
@@ -487,6 +498,89 @@ ul{
 .radioBtn:checked ~ p{
   display: initial;
 }
+
+.imgNavigation{
+  display: none;
+}
+
+@media (min-width: 720px){
+  .productDetails{
+    display: grid;
+    grid-template-areas: 
+    "one one two two two two two thr thr thr thr thr thr"
+    "one one two two two two two fou fou fou fou fou fou"
+    "one one two two two two two nin nin nin nin nin nin"
+    "one one two two two two two fiv fiv fiv fiv fiv fiv"
+    "one one two two two two two six six six six six six"
+    "one one two two two two two sev sev sev sev sev sev"
+    "one one two two two two two eig eig eig eig eig eig"
+    ;
+  }
+
+.imgNavigation{
+  grid-area: one;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-end;
+
+.smallImgBtn{
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+
+img{
+  width: 100%;
+  height: 100%
+}
+}
+}
+
+.productImgContainer{
+  grid-area: two;
+  width: 450px;
+  height: 500px;
+  margin-right: 2.44rem;
+
+.img{
+  height: 100%;
+  width: 100%;
+}
+}
+
+.productName{
+  grid-area: thr;
+}
+
+.rating{
+  grid-area: fou;
+}
+
+.productDescription{
+  grid-area: fiv;
+}
+
+.color{
+  grid-area: six;
+}
+
+.productSelection{
+  grid-area: sev;
+}
+
+.productSpecs{
+  grid-area: eig;
+}
+
+.price{
+  grid-area: nin;
+}
+}
+
+
 
 @media screen and (max-width: 900px) {
   nav .navLinks {
@@ -525,7 +619,7 @@ ul{
   .searchBar {
     /* display: none; */
     position: absolute;
-    bottom: -48px;
+    bottom: -45px;
     width: 90%;
     left: 0;
     right: 0;
@@ -533,7 +627,8 @@ ul{
 
   header {
     position: relative;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
+    padding-bottom: 2rem;
   }
 
   .form {

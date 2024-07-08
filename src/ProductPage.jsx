@@ -5,12 +5,14 @@ import products from "./products.json";
 import { Star } from "./Icons";
 import ProductCard from "./ProductCard";
 import ScrollToTop from "./ScrollToTop";
+import Footer from "./Footer";
+import Form from "./Form";
 
 const productsOutput = products.map(e => {
     return <ProductCard key={e.id} product={e} />
   })
 
-const productOutputSliced = productsOutput.slice(0,4)
+const productOutputSliced = productsOutput.slice(4,8)
 
 export default function ProductPage() {
   const params = useParams();
@@ -28,7 +30,7 @@ export default function ProductPage() {
         </nav>
       <section className="productInfo">
         <p className="sectionparagraph">
-          Shop {`>`} {products[productIndex - 1].productName}
+          Shop {`>`} Cart Page
         </p>
         {/* <button className="smallImgBtn">
                                 <img src={".././" + products[productIndex - 1].productImage} />
@@ -48,6 +50,20 @@ export default function ProductPage() {
             <span className="reviewNumbers">&nbsp; (15 reviews)</span>
           </div>
           <h2 className="price">$998</h2>
+          <div className="imgNavigation">
+            <button className="smallImgBtn">
+                <img src={".././" + products[productIndex - 1].productImage} alt="" />
+            </button>
+            <button className="smallImgBtn">
+                <img src=".././extra1.png" alt="" />
+            </button>
+            <button className="smallImgBtn">
+                <img src=".././extra2.png" alt="" />
+            </button>
+            <button className="smallImgBtn">
+               <img src=".././extra3.png" alt="" />
+            </button>
+          </div>
           <div className="productImgContainer">
             <img src={".././" + products[productIndex - 1].productImage} />
           </div>
@@ -137,12 +153,14 @@ Leg Height: 7''`}
             <div></div>
             <div></div>
           </div>
-          <h2>Shop Similar Items</h2>
+        </div>
+          <h2 className="shopSimilar">Shop Similar Items</h2>
           <div className="similarItems">
             {productOutputSliced}
           </div>
-        </div>
       </section>
+    <Form />
+    <Footer />
     </>
   );
 }

@@ -10,7 +10,8 @@ export default function ProductCard(props){
                 <div className="card-image">
                     <img src={".././" + props.product.productImage} alt="image1" />
                 </div>
-                <p>{productName}</p>
+                <p>{productName.length < 45 ? productName : productName.slice(0, 45) + "..."}</p>
+
 
                 <span className="priceTag">${props.product.productPrice}</span>
             </Link>

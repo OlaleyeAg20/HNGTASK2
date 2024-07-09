@@ -15,6 +15,8 @@ const productsOutput = products.map(e => {
 
 const productOutputSliced = productsOutput.slice(4,8)
 
+
+
 export default function ProductPage() {
 
   let [numberValue, setNumberValue] = useState(0)
@@ -30,6 +32,9 @@ export default function ProductPage() {
 
   let numberTracker = Number(localStorage.getItem("itemsInCart"))
   function handleItems(){
+    if(numberValue != 0 && numberValue > 0){
+      trackItemAddedToCart()
+    }
     localStorage.setItem("itemsInCart", numberTracker + numberValue)
     setNumberValue(0)
   }
@@ -42,6 +47,17 @@ export default function ProductPage() {
 
   const params = useParams();
   const productIndex = Number(params.productId);
+
+  const retrieveProducts = localStorage.getItem(`item${params.productId}`)
+  const retrieveProducts1 = localStorage.getItem(`item2`)
+
+  console.log(retrieveProducts, retrieveProducts1, params.productId)
+
+  function trackItemAddedToCart(){
+    localStorage.setItem(`item${params.productId}`, products[productIndex - 1].productName)
+    localStorage.setItem(`img${params.productId}`, products[productIndex - 1].productImage)
+    localStorage.setItem(`amount${params.productId}`, numberValue)
+  }
   
   const imgArray = [".././extra1.png", ".././extra2.png", ".././extra3.png"]
 
@@ -68,12 +84,11 @@ export default function ProductPage() {
       <Header tote="0" />
       <nav className="nav flex-justify-align-center">
                 <Link className="navLinks" to="/">Home</Link>
-                <Link className="navLinks" to="/checkout">Checkout Page</Link>
-                <Link className="navLinks currentpage" to="/product/1">Product</Link>
+                <Link className="navLinks currentpage" to="/product/1">Shop</Link>
         </nav>
       <section className="productInfo">
         <p className="sectionparagraph">
-          Home {`>`} Product
+          Shop {`>`} Cart Page
         </p>
         <div className="productDetails">
           <h1 className="productName">
@@ -124,8 +139,8 @@ export default function ProductPage() {
               <button onClick={increament}>+</button>
             </div>
             <button className="addToCart" onClick={handleItems}>Add to Cart</button>
-            <Link to={"/checkout"}>
-              <button className="payNow" id="emptyCart">
+            <Link to="/checkout">
+              <button className="payNow greenBtn">
                       Checkout
               </button>
             </Link>

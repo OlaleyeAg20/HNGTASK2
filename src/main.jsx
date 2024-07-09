@@ -7,7 +7,8 @@ import NotFound from './NotFound.jsx'
 import ProductPage from './ProductPage.jsx'
 import './index.css'
 import './assets/css/general-sans.css'
-import CheckoutPage from './CheckoutPage.jsx'
+// import CheckoutPage from './CheckoutPage.jsx'
+import ProductCheckOut from './ProductCheckout.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/checkout',
-    element: <CheckoutPage />,
+    element: <ProductCheckOut />,
     errorElement: <NotFound />,
   }
 ])

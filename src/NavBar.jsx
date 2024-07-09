@@ -5,8 +5,7 @@ function NavBar(){
         <>
             <nav className="nav flex-justify-align-center">
                 <Link className="navLinks currentpage" to="/">Home</Link>
-                <Link className="navLinks" to="/checkout">Checkout Page</Link>
-                <Link className="navLinks" to="product/1">Product</Link>
+                <Link className="navLinks" to="product/1">Shop</Link>
             </nav>
         </>
     )

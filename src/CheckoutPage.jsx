@@ -29,8 +29,8 @@ function CheckoutPage() {
       <Header />
       <nav className="nav flex-justify-align-center">
                 <Link className="navLinks" to="/">Home</Link>
-                <Link className="navLinks currentpage" to="/checkout">Checkout Page</Link>
-                <Link className="navLinks" to="/product/1">Product</Link>
+                <Link className="navLinks" to="/product/1">Shop</Link>
+                <Link className="navLinks currentpage" to="/checkout">Product</Link>
         </nav>
       <div className="bigContainer">
         <div className="containerCheckout">

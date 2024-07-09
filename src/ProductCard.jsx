@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
 export default function ProductCard(props){
     const productName = props.product.productName
     return (

@@ -68,7 +68,7 @@ export default function ProductPage() {
       <Header tote="0" />
       <nav className="nav flex-justify-align-center">
                 <Link className="navLinks" to="/">Shop</Link>
-                <Link className="navLinks currentpage" to="product/1">Cart Page</Link>
+                <Link className="navLinks currentpage" to="/product/1">Cart Page</Link>
                 <Link className="navLinks" to="/checkout">Checkout Page</Link>
         </nav>
       <section className="productInfo">

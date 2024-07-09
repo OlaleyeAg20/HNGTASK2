@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
 }
->>>>>>> b9a8185d5e595df7d718dc299a70ad1397dfdbd1

@@ -7,6 +7,7 @@ import ProductCard from "./ProductCard";
 import ScrollToTop from "./ScrollToTop";
 import Footer from "./Footer";
 import Form from "./Form";
+import { useState } from "react";
 
 const productsOutput = products.map(e => {
     return <ProductCard key={e.id} product={e} />
@@ -15,28 +16,65 @@ const productsOutput = products.map(e => {
 const productOutputSliced = productsOutput.slice(4,8)
 
 export default function ProductPage() {
+
+  let [numberValue, setNumberValue] = useState(0)
+
+  function increament(){
+    numberValue++
+    setNumberValue(numberValue)
+  }
+  function decreament(){
+    numberValue <= 0 ? numberValue : numberValue--
+    setNumberValue(numberValue < 0 ? 0 : numberValue)
+  }
+
+  let numberTracker = Number(localStorage.getItem("itemsInCart"))
+  function handleItems(){
+    localStorage.setItem("itemsInCart", numberTracker + numberValue)
+    setNumberValue(0)
+  }
+  function emptyCart(){
+    setNumberValue(0)
+    localStorage.setItem("itemsInCart", 0)
+    numberValue++
+    setNumberValue(numberValue)
+}
+
   const params = useParams();
   const productIndex = Number(params.productId);
-  // const productName = props.product.productName
+  
+  const imgArray = [".././extra1.png", ".././extra2.png", ".././extra3.png"]
+
+  const [currentImg, setCurrentImg] = useState(".././" + products[productIndex - 1].productImage)
+
+  function changeOne(){
+    setCurrentImg(".././" + products[productIndex - 1].productImage)
+  }
+
+  function changeTwo(){
+    setCurrentImg(imgArray[0])
+  }
+  function changeThree(){
+    setCurrentImg(imgArray[1])
+  }
+  function changeFour(){
+    setCurrentImg(imgArray[2])
+  }
+
   return (
     <>
       <ScrollToTop />
       <div className="announcementBar">Free Shipping on All Orders</div>
-      <Header />
+      <Header tote="0" />
       <nav className="nav flex-justify-align-center">
                 <Link className="navLinks" to="/">Shop</Link>
                 <Link className="navLinks currentpage" to="product/1">Cart Page</Link>
-                <Link className="navLinks" to="/">Checkout Page</Link>
+                <Link className="navLinks" to="/checkout">Checkout Page</Link>
         </nav>
       <section className="productInfo">
         <p className="sectionparagraph">
           Shop {`>`} Cart Page
         </p>
-        {/* <button className="smallImgBtn">
-                                <img src={".././" + products[productIndex - 1].productImage} />
-                            </button> */}
-        {/* <img src={".././" + products[productIndex - 1].productImage} /> */}
-        {/* <h1>{products[productIndex - 1].productName}</h1> */}
         <div className="productDetails">
           <h1 className="productName">
             {products[productIndex - 1].productName}
@@ -50,22 +88,22 @@ export default function ProductPage() {
             <span className="reviewNumbers">&nbsp; (15 reviews)</span>
           </div>
           <h2 className="price">$998</h2>
+          <div className="productImgContainer">
+            <img src={currentImg} />
+          </div>
           <div className="imgNavigation">
-            <button className="smallImgBtn">
+            <button className="smallImgBtn" onClick={changeOne}>
                 <img src={".././" + products[productIndex - 1].productImage} alt="" />
             </button>
-            <button className="smallImgBtn">
+            <button className="smallImgBtn" onClick={changeTwo}>
                 <img src=".././extra1.png" alt="" />
             </button>
-            <button className="smallImgBtn">
+            <button className="smallImgBtn" onClick={changeThree}>
                 <img src=".././extra2.png" alt="" />
             </button>
-            <button className="smallImgBtn">
+            <button className="smallImgBtn" onClick={changeFour}>
                <img src=".././extra3.png" alt="" />
             </button>
-          </div>
-          <div className="productImgContainer">
-            <img src={".././" + products[productIndex - 1].productImage} />
           </div>
           <p className="productDescription">
             This comfortable living room couch will provide a fresh and pleasing
@@ -81,11 +119,14 @@ export default function ProductPage() {
           </div>
           <div className="productSelection">
             <div className="btns">
-              <button>-</button>
-              <span>0</span>
-              <button>+</button>
+              <button onClick={decreament}>-</button>
+              <span>{numberValue}</span>
+              <button onClick={increament}>+</button>
             </div>
-            <button className="addToCart">Add to Cart</button>
+            <button className="addToCart" onClick={handleItems}>Add to Cart</button>
+            <button className="payNow" id="emptyCart" onClick={emptyCart}>
+                    Empty Cart
+            </button>
           </div>
           <div className="productSpecs">
             <div>

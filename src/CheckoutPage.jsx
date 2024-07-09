@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { Link } from "react-router-dom";
 // import { Tote, Card } from "./Icons";
 import { Card } from "./Icons";
@@ -11,11 +12,16 @@ const countriesOutput = countries.map((e)=>{
     return (<option>{e.countryName}</option>)
 })
 
+
+
+
 const styling = {
     backgroundImage: "url(.././couch.png)"
 }
 
 function CheckoutPage() {
+    
+    let itemNumber = localStorage.getItem("itemsInCart")
   return (
     <>
     <ScrollToTop />
@@ -82,7 +88,7 @@ function CheckoutPage() {
                 </div>
                 <div className="promoSection">
                     <div className="promoProduct">
-                        <div className="imgg" style={styling}></div>
+                        <div className="imgg" style={styling} value={itemNumber}></div>
                         <p>
                             <span>
                             Atlas Extra Large Slipcover Modular Floor Sectional Sofa

@@ -13,6 +13,9 @@ export default function Header(){
     function handleHide(){
         setHide(false)
     }
+
+    let itemsInCart = localStorage.getItem("itemsInCart")
+
     return (
         <>
         <header>
@@ -30,7 +33,9 @@ export default function Header(){
                 <span className="searchIcon"><SearchIcon /></span>
                 <input type="search" placeholder="Search for products, brands or a reference number" />
             </div>
-            <button className="tote iconBtns flex-justify-align-center"><Tote /></button>
+            <Link to="/checkout">
+                <button className="tote iconBtns flex-justify-align-center" id="cartBtn" value={itemsInCart}><Tote /></button>
+            </Link>
             <button className="iconBtns flex-justify-align-center"><User /><span>Account</span></button>
         </header>
         </>

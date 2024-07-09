@@ -312,6 +312,10 @@ footer {
     }
     li {
       margin-block: 1rem;
+      cursor: pointer;
+    }
+    li:hover{
+      text-decoration: underline;
     }
   }
 }
@@ -854,6 +858,7 @@ img{
   }
   footer {
     font-size: 0.875rem;
+
   }
   .form {
     inputL:placeholder {

@@ -6,9 +6,6 @@ import products from "./products.json";
 import ProductCard from "./ProductCard";
 import ScrollToTop from "./ScrollToTop";
 
-import Success from "./Success";
-import { useState } from "react";
-
 
 const productsOutput = products.map(e => {
     return <ProductCard key={e.id} product={e} />
@@ -64,12 +61,6 @@ const productOutputSliced = productsOutput.slice(4,8)
 
 function ProductCheckOut(){
 
-    const [paymentDone, setPaymentDone] = useState(false)
-
-    function toggleDisplay(){
-        setPaymentDone(true)
-    }
-
     return(
         <>
         <ScrollToTop />
@@ -101,12 +92,11 @@ function ProductCheckOut(){
                         <h1>$3050</h1>
                     </div>
                     <p>Taxes and shippings are calculated at checkout</p>
-                    <Link to="/checkout">
-                        <button className="checkoutBtn" onClick={toggleDisplay}>Checkout</button>
+                    <Link to="/payment">
+                        <button className="checkoutBtn">Checkout</button>
                     </Link>
                 </div></>
             ) : <h1>No Item In Cart</h1>}
-                {paymentDone ? (<Success />) : null}
             </section>
             <h2 className="shopSimilar">Shop Similar Items</h2>
           <div className="similarItems">

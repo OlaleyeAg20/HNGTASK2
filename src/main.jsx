@@ -9,6 +9,7 @@ import './index.css'
 import './assets/css/general-sans.css'
 // import CheckoutPage from './CheckoutPage.jsx'
 import ProductCheckOut from './ProductCheckout.jsx'
+import CheckoutPage from './CheckoutPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: '/checkout',
     element: <ProductCheckOut />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/payment',
+    element: <CheckoutPage />,
     errorElement: <NotFound />,
   }
 ])

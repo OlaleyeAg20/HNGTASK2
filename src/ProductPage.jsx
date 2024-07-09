@@ -87,9 +87,6 @@ export default function ProductPage() {
                 <Link className="navLinks currentpage" to="/product/1">Shop</Link>
         </nav>
       <section className="productInfo">
-        <p className="sectionparagraph">
-          Shop {`>`} Cart Page
-        </p>
         <div className="productDetails">
           <h1 className="productName">
             {products[productIndex - 1].productName}

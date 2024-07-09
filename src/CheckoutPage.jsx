@@ -6,6 +6,8 @@ import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
 import countries from "./countries.json"
 import Footer from "./Footer";
+import Success from "./Success";
+import { useState } from "react";
 
 
 const countriesOutput = countries.map((e)=>{
@@ -21,6 +23,12 @@ const styling = {
 
 function CheckoutPage() {
     
+    const [paymentDone, setPaymentDone] = useState(false)
+
+    function toggleDisplay(){
+        setPaymentDone(true)
+    }
+
     let itemNumber = localStorage.getItem("itemsInCart")
   return (
     <>
@@ -102,12 +110,14 @@ function CheckoutPage() {
                     <p><span>Shipping</span><span>Enter Shipping Address</span></p>
                     <p className="boldPara"><span>Total</span><span>$1028</span></p>
                 </div>
-                <button className="payNow">
+                
+                <button className="payNow" onClick={toggleDisplay}>
                 Pay now
                 </button>
             </div>
 
         </div>
+        {paymentDone ? (<Success />) : null}
         <Footer />
     </>
   );

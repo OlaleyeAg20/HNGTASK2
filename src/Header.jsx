@@ -23,9 +23,9 @@ export default function Header(){
             {
                 hide ? (<nav className="mobile-nav">
                     <button onClick={handleHide} className="closeBtn"><Close /></button>
-                    <Link className="navLinks currentpage" to="/">Shop</Link>
-                    <Link className="navLinks" to="/product/1">Cart Page</Link>
+                    <Link className="navLinks currentpage" to="/">Home</Link>
                     <Link className="navLinks" to="/checkout">Checkout Page</Link>
+                    <Link className="navLinks" to="/product/1">Product</Link>
             </nav>) : null
             }
             <Link to="/" className="logoLink"><h2 className="logo">The Garage</h2></Link>

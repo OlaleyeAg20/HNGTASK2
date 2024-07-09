@@ -28,9 +28,9 @@ function CheckoutPage() {
       <div className="announcementBar">Free Shipping on All Orders</div>
       <Header />
       <nav className="nav flex-justify-align-center">
-                <Link className="navLinks" to="/">Shop</Link>
-                <Link className="navLinks" to="/product/1">Cart Page</Link>
+                <Link className="navLinks" to="/">Home</Link>
                 <Link className="navLinks currentpage" to="/checkout">Checkout Page</Link>
+                <Link className="navLinks" to="/product/1">Product</Link>
         </nav>
       <div className="bigContainer">
         <div className="containerCheckout">

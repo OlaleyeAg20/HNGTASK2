@@ -33,12 +33,12 @@ export default function ProductPage() {
     localStorage.setItem("itemsInCart", numberTracker + numberValue)
     setNumberValue(0)
   }
-  function emptyCart(){
-    setNumberValue(0)
-    localStorage.setItem("itemsInCart", 0)
-    numberValue++
-    setNumberValue(numberValue)
-}
+//   function emptyCart(){
+//     setNumberValue(0)
+//     localStorage.setItem("itemsInCart", 0)
+//     numberValue++
+//     setNumberValue(numberValue)
+// }
 
   const params = useParams();
   const productIndex = Number(params.productId);
@@ -67,13 +67,13 @@ export default function ProductPage() {
       <div className="announcementBar">Free Shipping on All Orders</div>
       <Header tote="0" />
       <nav className="nav flex-justify-align-center">
-                <Link className="navLinks" to="/">Shop</Link>
-                <Link className="navLinks currentpage" to="/product/1">Cart Page</Link>
+                <Link className="navLinks" to="/">Home</Link>
                 <Link className="navLinks" to="/checkout">Checkout Page</Link>
+                <Link className="navLinks currentpage" to="/product/1">Product</Link>
         </nav>
       <section className="productInfo">
         <p className="sectionparagraph">
-          Shop {`>`} Cart Page
+          Home {`>`} Product
         </p>
         <div className="productDetails">
           <h1 className="productName">
@@ -124,9 +124,11 @@ export default function ProductPage() {
               <button onClick={increament}>+</button>
             </div>
             <button className="addToCart" onClick={handleItems}>Add to Cart</button>
-            <button className="payNow" id="emptyCart" onClick={emptyCart}>
-                    Empty Cart
-            </button>
+            <Link to={"/checkout"}>
+              <button className="payNow" id="emptyCart">
+                      Checkout
+              </button>
+            </Link>
           </div>
           <div className="productSpecs">
             <div>

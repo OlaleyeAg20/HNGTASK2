@@ -638,18 +638,23 @@ p{
   display: none;
 }
 
+#cartBtn{
+  position: relative;
+}
 
 #cartBtn::after{
   content: attr(value);
-  background: #333;
+  background: var(--red-color);
   padding: .1rem;
   width: 1.2rem;
   border-radius: 50%;
   color: #FFF;
+  position: absolute;
+  top: 25px;
 }
 
 #emptyCart{
-  background: var(--logo-red);
+  background: var(--btn-green);
   width: 100%;
   color: #FFF;
   border: none;
@@ -671,8 +676,8 @@ p{
     &::after{
       content: '';
       height: 100%;
-      width: 1px;
-      background-color: #ADADAD;
+      width: .5px;
+      background-color: #E7E8EB;
       position: absolute;
       top: 0;
       left: 50%;
@@ -766,6 +771,11 @@ img{
   nav .navLinks {
     font-size: 14px;
   }
+
+  button{
+    cursor: initial;
+  }
+
   nav {
     gap: 0.5rem;
   }

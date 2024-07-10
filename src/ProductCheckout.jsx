@@ -76,7 +76,7 @@ function ProductCheckOut(){
                 <>
                 <div className="sectionHeaer">
                     <h1>Cart</h1>
-                    <p>2 Items in your cart</p> 
+                    <p>{outputCartArray.length} Items in your cart</p> 
                 </div>
                 <div className="tableheader">
                     <h4>Product</h4>

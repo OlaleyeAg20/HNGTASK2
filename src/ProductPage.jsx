@@ -136,11 +136,9 @@ export default function ProductPage() {
               <button onClick={increament}>+</button>
             </div>
             <button className="addToCart" onClick={handleItems}>Add to Cart</button>
-            <Link to="/checkout">
-              <button className="payNow greenBtn">
+              <button className="payNow greenBtn" onClick={function(){open("/checkout", "_self")}}>
                       Checkout
               </button>
-            </Link>
           </div>
           <div className="productSpecs">
             <div>

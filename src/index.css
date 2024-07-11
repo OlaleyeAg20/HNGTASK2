@@ -16,6 +16,10 @@
   --letter-spacing-negative: -0.15px;
 }
 
+a{
+  text-decoration: none;
+}
+
 img {
   object-fit: cover;
 }

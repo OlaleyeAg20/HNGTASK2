@@ -11,7 +11,7 @@ import './assets/css/general-sans.css'
 import ProductCheckOut from './ProductCheckout.jsx'
 import CheckoutPage from './CheckoutPage.jsx'
 
-fetch("https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=false&size=30&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041")
+fetch("https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=false&size=30&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041", {mode: "no-cors"})
 .then(res => res.json())
 .then(data => console.log(data))
 

@@ -1,23 +1,233 @@
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import products from "./products.json";
 import { Star } from "./Icons";
 import ProductCard from "./ProductCard";
 import ScrollToTop from "./ScrollToTop";
 import Footer from "./Footer";
 import Form from "./Form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const productsOutput = products.map(e => {
-    return <ProductCard key={e.id} product={e} />
-  })
-
-const productOutputSliced = productsOutput.slice(4,8)
 
 
 
 export default function ProductPage() {
+
+  const cors_api = "https://standing-ink-sandpaper.glitch.me/"
+
+const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=true&size=12&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041"
+
+  let [products, setProducts] = useState([{
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  },
+  {
+    name: "productName",
+    current_price: [{NGN: [20000]}],
+    photos: [{url: 'the-garage/product_vision_corner_set_8fa690_1.jpg'}]
+  }
+])
+
+  useEffect(()=>{
+    fetch(cors_api + originalApi)
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data.items)
+      })
+  },[products]);
+
+  
+  const params = useParams();
+  const productIndex = Number(params.productId);
+
+
+  const retrieveProducts = localStorage.getItem(`item${params.productId}`)
+  const retrieveProducts1 = localStorage.getItem(`item2`)
+
+  console.log(retrieveProducts, retrieveProducts1, params.productId)
+
+  function trackItemAddedToCart(){
+    localStorage.setItem(`item${params.productId}`, products[productIndex - 1].name)
+    localStorage.setItem(`img${params.productId}`, products[productIndex - 1].photos[0].url)
+    localStorage.setItem(`amount${params.productId}`, numberValue)
+  }
+  
+  const imgArray = [".././extra1.png", ".././extra2.png", ".././extra3.png"]
+
+  const [currentImg, setCurrentImg] = useState(".././couch.png")
+
+  function changeOne(){
+    setCurrentImg(products[productIndex - 1].photos[0].url)
+  }
+
+  function changeTwo(){
+    setCurrentImg(imgArray[0])
+  }
+  function changeThree(){
+    setCurrentImg(imgArray[1])
+  }
+  function changeFour(){
+    setCurrentImg(imgArray[2])
+  }
+  
+
+  const productsOutput = products.map(e => {
+      return <ProductCard key={e.id} product={e} />
+    })
+  
+  const productOutputSliced = productsOutput.slice(4,8)
+
 
   let [numberValue, setNumberValue] = useState(0)
 
@@ -45,38 +255,6 @@ export default function ProductPage() {
 //     setNumberValue(numberValue)
 // }
 
-  const params = useParams();
-  const productIndex = Number(params.productId);
-
-  const retrieveProducts = localStorage.getItem(`item${params.productId}`)
-  const retrieveProducts1 = localStorage.getItem(`item2`)
-
-  console.log(retrieveProducts, retrieveProducts1, params.productId)
-
-  function trackItemAddedToCart(){
-    localStorage.setItem(`item${params.productId}`, products[productIndex - 1].productName)
-    localStorage.setItem(`img${params.productId}`, products[productIndex - 1].productImage)
-    localStorage.setItem(`amount${params.productId}`, numberValue)
-  }
-  
-  const imgArray = [".././extra1.png", ".././extra2.png", ".././extra3.png"]
-
-  const [currentImg, setCurrentImg] = useState(".././" + products[productIndex - 1].productImage)
-
-  function changeOne(){
-    setCurrentImg(".././" + products[productIndex - 1].productImage)
-  }
-
-  function changeTwo(){
-    setCurrentImg(imgArray[0])
-  }
-  function changeThree(){
-    setCurrentImg(imgArray[1])
-  }
-  function changeFour(){
-    setCurrentImg(imgArray[2])
-  }
-
   return (
     <>
       <ScrollToTop />
@@ -89,7 +267,7 @@ export default function ProductPage() {
       <section className="productInfo">
         <div className="productDetails">
           <h1 className="productName">
-            {products[productIndex - 1].productName}
+            {products[productIndex - 1].name}
           </h1>
           <div className="rating">
             <Star />
@@ -101,11 +279,11 @@ export default function ProductPage() {
           </div>
           <h2 className="price">$998</h2>
           <div className="productImgContainer">
-            <img src={currentImg} />
+            <img src={"https://api.timbu.cloud/images/" + currentImg} />
           </div>
           <div className="imgNavigation">
             <button className="smallImgBtn" onClick={changeOne}>
-                <img src={".././" + products[productIndex - 1].productImage} alt="" />
+                <img src={products[productIndex - 1]} alt="" />
             </button>
             <button className="smallImgBtn" onClick={changeTwo}>
                 <img src=".././extra1.png" alt="" />

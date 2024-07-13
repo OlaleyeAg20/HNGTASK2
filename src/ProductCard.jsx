@@ -9,7 +9,7 @@ export default function ProductCard(props){
     const imgSrc = props.product.photos[0].url
     return (
         <>
-            <Link to={"product/" + `${props.id + 1}`} className="productCard">
+            <Link to={"/product/" + `${props.id + 1}`} className="productCard">
                 <div className="card-image">
                     <img src={imagebaseUrl + imgSrc} alt="image1" />
                 </div>

@@ -185,7 +185,7 @@ const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905
     .then(data => {
       setProducts(data.items)
       })
-  },[products]);
+  },[]);
 
   
   const params = useParams();
@@ -219,7 +219,7 @@ const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905
   
 
   const productsOutput = products.map(e => {
-      return <ProductCard key={e.id} product={e} />
+      return <ProductCard key={e.id} id={products.indexOf(e)} product={e} />
     })
   
   const productOutputSliced = productsOutput.slice(4,8)

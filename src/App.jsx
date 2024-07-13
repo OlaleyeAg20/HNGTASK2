@@ -33,7 +33,6 @@ function App() {
     fetch(cors_api + originalApi)
     .then(res => res.json())
     .then(data => {
-      console.log(data.items[0].photos)
       setProducts(data.items)
       })
   },[page, originalApi]);
@@ -43,8 +42,6 @@ function App() {
   const productsOutput = products.map(e => {
     return <ProductCard key={e.id} id={products.indexOf(e)} product={e} />
   })
-  // console.log(products[0].photos[0].url)
-
   return (
     <>
       <div className="announcementBar">Free Shipping on All Orders</div>

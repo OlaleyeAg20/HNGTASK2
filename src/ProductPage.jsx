@@ -192,10 +192,6 @@ const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905
   const productIndex = Number(params.productId);
 
 
-  const retrieveProducts = localStorage.getItem(`item${params.productId}`)
-  const retrieveProducts1 = localStorage.getItem(`item2`)
-
-  console.log(retrieveProducts, retrieveProducts1, params.productId)
 
   function trackItemAddedToCart(){
     localStorage.setItem(`item${params.productId}`, products[productIndex - 1].name)

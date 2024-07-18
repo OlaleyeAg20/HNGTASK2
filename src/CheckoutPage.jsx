@@ -46,7 +46,7 @@ function CheckoutPage() {
                 <h2>Billing Details</h2>
                 <p>
                 Already have an account with us?
-                <Link className="redLink">Login</Link>
+                <Link className="redLink"> Login</Link>
                 </p>
                 <input
                 type="email"

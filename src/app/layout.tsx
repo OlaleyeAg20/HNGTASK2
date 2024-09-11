@@ -8,11 +8,6 @@ import NavBar from "../components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "The Garage",
-  description: "Get the best of the best sofa chairs at affordable price",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>The Garage</title>
+      </head>
       <body>
         <div className="announcementBar">Free Shipping on All Orders</div>
         <Header />

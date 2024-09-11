@@ -1,11 +1,10 @@
-import { Inter } from "next/font/google";
 import "./index.css";
 import Footer from '../components/Footer';
 import Form from "../components/Form";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
+import PropTypes from 'prop-types';
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -26,3 +25,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

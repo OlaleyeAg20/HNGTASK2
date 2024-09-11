@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
 
 const headerLinks = [
   {
@@ -16,12 +15,12 @@ const headerLinks = [
 
 
 const NavBar = () => {
+  const pathName = usePathname()
+
   const outputHeaderLinks = headerLinks.map(e => {
-  
-    const pathName = usePathname()
     const className = pathName === e.URL ? "navLinks currentpage" : "navLinks"
   
-    return <Link className={className} href={e.URL}>{e.name}</Link>
+    return <Link className={className} href={e.URL} key={e.URL}>{e.name}</Link>
   })
   
   return (

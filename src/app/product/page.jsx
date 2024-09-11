@@ -1,9 +1,4 @@
-"use client"
-import Header from "../../components/Header";
-import { Link } from "next/link";
 import { Star } from "../../components/Icons";
-import ScrollToTop from "../../components/ScrollToTop";
-import { useState, useEffect } from "react";
 import {initalizeProduct} from "../page"
 import ProductCard from "../../components/ProductCard";
 

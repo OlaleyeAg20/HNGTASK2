@@ -96,7 +96,7 @@ function CheckoutPage() {
                 </div>
                 <div className="promoSection">
                     <div className="promoProduct">
-                        <div className="imgg" style={styling} value={itemNumber}></div>
+                        <div className="imgg" style={styling}></div>
                         <p>
                             <span>
                             Atlas Extra Large Slipcover Modular Floor Sectional Sofa

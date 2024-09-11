@@ -1,22 +1,6 @@
 import { Trash } from "./Icons"
 import Footer from "./Footer"
-// import products from "./products.json";
 import {useEffect } from "react"
-// import ProductCard from "./ProductCard";
-// import ScrollToTop from "./ScrollToTop";
-
-// const cors_api = "https://standing-ink-sandpaper.glitch.me/"
-
-// const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=true&size=12&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041"
-
-// function ProductCheckOut(){
-//   const [products, setProducts] = useState([])
-  
-// const productsOutput = products.map(e => {
-//     return <ProductCard key={e.id} product={e} />
-//   })
-
-// const productOutputSliced = productsOutput.slice(4,8)
 
 
   
@@ -58,49 +42,52 @@ import {useEffect } from "react"
   })
 
 
-    return(
-        <>
-        <ScrollToTop />
-            <div className="announcementBar">Free Shipping on All Orders</div>
-            <Header />
-            <nav className="nav flex-justify-align-center">
-                        <Link className="navLinks" to="/">Home</Link>
-                        <Link className="navLinks" to="/product/1">Shop</Link>
-                        <Link className="navLinks currentpage" to="/checkout">Product</Link>
-            </nav>
-            <section className="pageContainer">
-            {renderCartArray ? (
-                <>
-                <div className="sectionHeaer">
-                    <h1>Cart</h1>
-                    <p>{outputCartArray.length} Items in your cart</p> 
-                </div>
-                <div className="tableheader">
-                    <h4>Product</h4>
-                    <div className="spacer1"></div>
-                    <h4 className="quantity">Quantity</h4>
-                    <h4>Delete</h4>
-                </div>
-                {renderCartArray}
-                <div className="calculation">
-                    <p><span>SubTotal</span> <span>$2023</span></p>
-                    <div className="bolded">
-                        <h1>Total</h1>
-                        <h1>$3050</h1>
-                    </div>
-                    <p>Taxes and shippings are calculated at checkout</p>
-                    <Link to="/payment">
-                        <button className="checkoutBtn">Checkout</button>
-                    </Link>
-                </div></>
-            ) : <h1>No Item In Cart</h1>}
-            </section>
-            <h2 className="shopSimilar">Shop Similar Items</h2>
-          <div className="similarItems">
-            {productOutputSliced}
-          </div>
-            <Footer />
-        </>
-    )
+    function  ProductCheckOut(){
+
+      return(
+          <>
+              <div className="announcementBar">Free Shipping on All Orders</div>
+              <Header />
+              <nav className="nav flex-justify-align-center">
+                          <Link className="navLinks" to="/">Home</Link>
+                          <Link className="navLinks" to="/product/1">Shop</Link>
+                          <Link className="navLinks currentpage" to="/checkout">Product</Link>
+              </nav>
+              <section className="pageContainer">
+              {renderCartArray ? (
+                  <>
+                  <div className="sectionHeaer">
+                      <h1>Cart</h1>
+                      <p>{outputCartArray.length} Items in your cart</p> 
+                  </div>
+                  <div className="tableheader">
+                      <h4>Product</h4>
+                      <div className="spacer1"></div>
+                      <h4 className="quantity">Quantity</h4>
+                      <h4>Delete</h4>
+                  </div>
+                  {renderCartArray}
+                  <div className="calculation">
+                      <p><span>SubTotal</span> <span>$2023</span></p>
+                      <div className="bolded">
+                          <h1>Total</h1>
+                          <h1>$3050</h1>
+                      </div>
+                      <p>Taxes and shippings are calculated at checkout</p>
+                      <Link to="/payment">
+                          <button className="checkoutBtn">Checkout</button>
+                      </Link>
+                  </div></>
+              ) : <h1>No Item In Cart</h1>}
+              </section>
+              <h2 className="shopSimilar">Shop Similar Items</h2>
+            <div className="similarItems">
+              {productOutputSliced}
+            </div>
+              <Footer />
+          </>
+      )
+    }
+
 
 export default ProductCheckOut

@@ -516,7 +516,7 @@ ul{
   display: none;
 }
 
-.radioBtn ~ p{
+.radioBtn ~ p, .radioBtn ~ div{
   display: none;
 }
 
@@ -655,7 +655,7 @@ p{
   background-color: #ADADAD!important;
 }
 
-.radioBtn:checked ~ p{
+.radioBtn:checked ~ p, .radioBtn:checked ~ div{
   display: initial;
 }
 

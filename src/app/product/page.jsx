@@ -173,7 +173,7 @@ Leg Height: 7''`}
               <span>Details</span> <span>+</span>
             </label>
             <input type="checkbox" className="radioBtn" name="spec" id="spec2" />
-            <p>
+            <div>
               <ul>
                 <li>Weight Capacity: 300 lbs</li>
                 <li>Fabric Content: 74% Cotton, 26% Linen</li>
@@ -187,7 +187,7 @@ Leg Height: 7''`}
                 <li>Legs Removable: Yes</li>
                 <li>Imported</li>
               </ul>
-            </p>
+            </div>
           </div>
           <div>
             <label htmlFor="spec4">

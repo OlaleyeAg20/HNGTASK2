@@ -114,5 +114,3 @@ const products = initalizeProduct
     </>
   );
 }
-
-export {initalizeProduct}

@@ -1,24 +1,22 @@
-import Header from "./Header"
-import { Link } from "next/link"
 import { Trash } from "./Icons"
 import Footer from "./Footer"
 // import products from "./products.json";
-import { useState, useEffect } from "react"
-import ProductCard from "./ProductCard";
-import ScrollToTop from "./ScrollToTop";
+import {useEffect } from "react"
+// import ProductCard from "./ProductCard";
+// import ScrollToTop from "./ScrollToTop";
 
-const cors_api = "https://standing-ink-sandpaper.glitch.me/"
+// const cors_api = "https://standing-ink-sandpaper.glitch.me/"
 
-const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=true&size=12&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041"
+// const originalApi = "https://api.timbu.cloud/products?organization_id=77956dd905a0423cb2e95533c90a4964&reverse_sort=true&size=12&Appid=R7R161YTU4X763G&Apikey=3adf4c4b1f074d828e4310e3aff6d61720240712135500609041"
 
-function ProductCheckOut(){
-  const [products, setProducts] = useState([])
+// function ProductCheckOut(){
+//   const [products, setProducts] = useState([])
   
-const productsOutput = products.map(e => {
-    return <ProductCard key={e.id} product={e} />
-  })
+// const productsOutput = products.map(e => {
+//     return <ProductCard key={e.id} product={e} />
+//   })
 
-const productOutputSliced = productsOutput.slice(4,8)
+// const productOutputSliced = productsOutput.slice(4,8)
 
 
   
@@ -42,22 +40,6 @@ const productOutputSliced = productsOutput.slice(4,8)
 
   let outputCartArray = []
 
-  for(let i = 0; i < getItemsInCart.length; i++){
-    const item = localStorage.getItem(`item${getItemsInCart[i + 1]}`)
-    const itemNum = localStorage.getItem(`amount${getItemsInCart[i + 1]}`)
-    const itemImg = localStorage.getItem(`img${getItemsInCart[i + 1]}`)
-
-    if(item){
-        outputCartArray.push({item, itemNum, itemImg})
-    }
-  }
-
-  function deleteItem(btn){
-    localStorage.removeItem(`item${btn}`)
-    localStorage.removeItem(`amount${btn}`)
-    localStorage.removeItem(`img${btn}`)
-  }
-
   let renderCartArray = outputCartArray.map((e)=>{
     return (
         <div className="itemData" key={e.item}>
@@ -68,7 +50,7 @@ const productOutputSliced = productsOutput.slice(4,8)
                         <p>Price</p>
                     </div>
                     <div className="quantity">{e.itemNum}</div>
-                    <button className="delete" onClick={function(){deleteItem(outputCartArray.indexOf(e))}}>
+                    <button className="delete">
                         <Trash />
                     </button>
         </div>
@@ -120,6 +102,5 @@ const productOutputSliced = productsOutput.slice(4,8)
             <Footer />
         </>
     )
-}
 
 export default ProductCheckOut

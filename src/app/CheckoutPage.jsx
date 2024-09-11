@@ -29,7 +29,7 @@ function CheckoutPage() {
         setPaymentDone(true)
     }
 
-    let itemNumber = localStorage.getItem("itemsInCart")
+    
   return (
     <>
     <ScrollToTop />

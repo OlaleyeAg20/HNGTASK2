@@ -15,7 +15,7 @@ export default function Header(){
         setHide(false)
     }
 
-    let itemsInCart = localStorage.getItem("itemsInCart")
+    
 
     return (
         <>
@@ -33,7 +33,7 @@ export default function Header(){
                 <span className="searchIcon"><SearchIcon /></span>
                 <input type="search" placeholder="Search for products, brands or a reference number" />
             </div>
-                <button className="tote iconBtns flex-justify-align-center" id="cartBtn" onClick={function(){open("/checkout","_self")}} value={itemsInCart || 0}><Tote /></button>
+                <button className="tote iconBtns flex-justify-align-center" id="cartBtn" onClick={function(){open("/checkout","_self")}} value={0}><Tote /></button>
             <button className="iconBtns flex-justify-align-center"><User /><span>Account</span></button>
         </header>
         </>

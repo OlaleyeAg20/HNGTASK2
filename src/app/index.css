@@ -119,15 +119,16 @@ header {
   border-radius: 300px;
   position: relative;
 
-  input {
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-    padding-left: 64px;
-    background: transparent;
-    border: none;
-    border-radius: inherit;
-  }
+}
+
+.searchBar input {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  padding-left: 64px;
+  background: transparent;
+  border: none;
+  border-radius: inherit;
 }
 
 .searchIcon {
@@ -163,10 +164,11 @@ nav {
   height: 37px;
   gap: 2rem;
 
-  .currentpage {
-    color: var(--link-green);
-    border-bottom: 2px solid var(--link-green);
-  }
+}
+
+nav .currentpage {
+  color: var(--link-green);
+  border-bottom: 2px solid var(--link-green);
 }
 
 .navLinks {
@@ -178,10 +180,11 @@ nav {
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
-    color: var(--link-green);
-    border-bottom: 2px solid var(--link-green);
-  }
+}
+
+.navLinks:hover {
+  color: var(--link-green);
+  border-bottom: 2px solid var(--link-green);
 }
 
 .productsContainer {
@@ -209,18 +212,50 @@ nav {
   cursor: pointer;
   text-decoration: none;
 
-  &:hover,
-  & {
+}
+
+.productCard .card-image {
+  align-self: stretch;
+  height: 288px;
+  position: relative;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+}
+.card-image:hover img {
+  transform: scale(1.2);
+  transition: transform 1s ease;
+}
+.card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff20;
+}
+.card-image:hover::after {
+  background: #00000020;
+}
+
+.productCard:hover,
+  .productCard {
     color: var(--black-text);
     text-decoration: none;
   }
 
-  &:focus img {
+  .productCard:focus img {
     transform: scale(1.2);
     transition: transform 1s ease;
   }
 
-  p {
+  .productCard p {
     font-size: 0.95rem;
     width: 100%;
     word-wrap: normal;
@@ -230,36 +265,6 @@ nav {
     letter-spacing: var(--letter-spacing-negative);
     margin-top: 0.5rem;
   }
-
-  .card-image {
-    align-self: stretch;
-    height: 288px;
-    position: relative;
-    border-radius: 0.25rem;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-    &:hover img {
-      transform: scale(1.2);
-      transition: transform 1s ease;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #ffffff20;
-    }
-    &:hover::after {
-      background: #00000020;
-    }
-  }
-}
 
 .form-container {
   display: flex;

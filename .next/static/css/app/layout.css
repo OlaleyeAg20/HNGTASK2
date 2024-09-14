@@ -44,9 +44,9 @@ button, label {
 
 footer ul li{
   cursor: pointer;
-&:hover{
-  text-decoration: underline;
 }
+footer ul li:hover{
+  text-decoration: underline;
 }
 
 #menuBtn {
@@ -345,7 +345,7 @@ footer ul {
 }
 
 footer ul h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 footer ul li {
   align-self: flex-start;

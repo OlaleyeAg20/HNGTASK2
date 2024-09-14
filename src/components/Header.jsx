@@ -29,7 +29,7 @@ export default function Header(){
                 }}>
                     <button className="closeBtn"><Close /></button>
                     <Link className="navLinks currentpage" href="/">Home</Link>
-                    <Link className="navLinks" href="/product">Shop</Link>
+                    <Link className="navLinks" href="/product/1">Shop</Link>
             </nav>) : null
             }
             <Link href="/" className="logoLink"><h2 className="logo">The Garage</h2></Link>

@@ -103,7 +103,7 @@ const products = initalizeProduct
   // }, [page]); // Only dependency is page
 
   const productsOutput = products.map(e => {
-    return <ProductCard key={e.id} id={products.indexOf(e)} product={e} />
+    return <ProductCard key={e.id} id={products.indexOf(e)} product={e} img={e.productImage} />
   })
 
   return (

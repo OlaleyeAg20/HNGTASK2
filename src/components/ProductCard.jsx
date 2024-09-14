@@ -17,13 +17,13 @@ export default function ProductCard(props){
 
                 <span className="priceTag">₦ {props.product.productPrice}</span>
             </Link> */}
-            <Link href="/product" className="productCard">
+            <Link href={`/product/${props.id + 1}`} className="productCard">
                 <div className="card-image">
-                    <img src={imgSrc} alt="image1" />
+                    <img src={props.img} alt="image1" />
                 </div>
                 <p>{productName.length < 45 ? productName : productName.slice(0, 45) + "..."}</p>
 
-                <span className="priceTag">₦ {props.product.productPrice}</span>
+                <span className="priceTag">$ {props.product.productPrice}</span>
             </Link>
         </>
     )

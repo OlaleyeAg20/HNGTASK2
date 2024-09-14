@@ -9,7 +9,7 @@ const headerLinks = [
   },
   {
       name: 'Shop',
-      URL: '/product'
+      URL: '/product/1'
   }
 ]
 

@@ -22,8 +22,12 @@ export default function Header(){
         <header>
             <button className="iconBtns flex-justify-align-center" onClick={handleClick} id="menuBtn"><MenuIcon /></button>
             {
-                hide ? (<nav className="mobile-nav">
-                    <button onClick={handleHide} className="closeBtn"><Close /></button>
+                hide ? (<nav className="mobile-nav" onClick={(e) => {
+                    if(e.target !== e.currentTarget){
+                        handleHide()
+                    }
+                }}>
+                    <button className="closeBtn"><Close /></button>
                     <Link className="navLinks currentpage" href="/">Home</Link>
                     <Link className="navLinks" href="/product">Shop</Link>
             </nav>) : null
@@ -33,7 +37,9 @@ export default function Header(){
                 <span className="searchIcon"><SearchIcon /></span>
                 <input type="search" placeholder="Search for products, brands or a reference number" />
             </div>
-                <button className="tote iconBtns flex-justify-align-center" id="cartBtn" onClick={function(){open("/checkout","_self")}} value={0}><Tote /></button>
+                <Link className="tote iconBtns flex-justify-align-center" href="/cart" id="cartBtn" value={0}>
+                    <Tote />
+                </Link>
             <button className="iconBtns flex-justify-align-center"><User /><span>Account</span></button>
         </header>
         </>

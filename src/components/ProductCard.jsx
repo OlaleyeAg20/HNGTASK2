@@ -5,7 +5,6 @@ import Link from "next/link"
 
 export default function ProductCard(props){
     const productName = props.product.productName
-    const imgSrc = props.product.productImage
     return (
         <>
             {/* <Link href="/product" className="productCard">
@@ -35,5 +34,6 @@ ProductCard.propTypes = {
         productImage: PropTypes.string.isRequired,
         productPrice: PropTypes.number.isRequired,    
       }).isRequired,
+      img: PropTypes.string,
     id: PropTypes.number
 }

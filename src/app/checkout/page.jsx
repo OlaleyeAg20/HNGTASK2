@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 const countriesOutput = countries.map((e)=>{
-    return (<option>{e.countryName}</option>)
+    return (<option key={e.countryName}>{e.countryName}</option>)
 })
 
 
